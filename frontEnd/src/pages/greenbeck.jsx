@@ -31,7 +31,7 @@ const GreenBeck = () => {
           <ul>
             {greenBecks.map((greenBeck) => (
               <li key={greenBeck.id}>
-                {greenBeck.name} - {greenBeck.age} - {greenBeck.email}
+                id:{greenBeck.id} - {greenBeck.name} - {greenBeck.age} - {greenBeck.email}
               </li>
             ))}
           </ul>

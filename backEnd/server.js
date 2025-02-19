@@ -3,15 +3,9 @@ const express = require('express');
 const cors = require('cors');
 const sequelize = require("./config/database");
 
-const app = express();
-
-const newsRoutes = require('./routes/newsRoutes.js');
-const userRoutes = require('./routes/userRoutes.js');
-const adminRoutes = require('./routes/adminRoutes.js');
-const fixtureRoutes = require('./routes/fixtureRoutes.js');
-const scoreRoutes = require('./routes/scoreRoutes.js');
 const greenBeckRoutes = require('./routes/greenBeckRoutes.js');
 
+const app = express();
 app.use(cors({
     origin: 'http://localhost:5173'  
 }));
@@ -23,13 +17,8 @@ app.use((req, res, next) => {
 });
 
 
-app.use('/api/news', newsRoutes);
-app.use('/api/user', userRoutes);
-app.use('/api/adminDashboard', adminRoutes);
-app.use('/api/fixture', fixtureRoutes);
-app.use('/api/scores', scoreRoutes);
-app.use('/api/greenbeck', greenBeckRoutes);
 
+app.use('/api/greenbeck', greenBeckRoutes);
 
 
 
